@@ -22,16 +22,8 @@ def test_summary_stats():
     )
 
     # Calculate the summary statistics for the test
-    summary_stats = sample_dataframe.describe().T[
-        ["mean", "50%", "std", "min", "max"]
-    ]
-    summary_stats.columns = [
-        "Mean",
-        "Median",
-        "Standard Deviation",
-        "Min",
-        "Max"
-    ]
+    summary_stats = sample_dataframe.describe().T[["mean", "50%", "std", "min", "max"]]
+    summary_stats.columns = ["Mean", "Median", "Standard Deviation", "Min", "Max"]
 
     # Check that summary statistics are calculated for all numeric columns
     assert not summary_stats.empty, "Summary statistics should not be empty."

@@ -33,6 +33,7 @@ jobs:
       - name: Format Python Code
         run: |
           pip install black
+          black python_script/
           black --check python_script/
 
       # Step 5: Run linter (flake8)
