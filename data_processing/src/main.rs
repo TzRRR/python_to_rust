@@ -7,8 +7,11 @@ use ndarray::Array2;
 use std::error::Error;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let file_path = "../graduate_program_recommendation_data.csv";
-    let records = load_records(file_path)?;
+    let file_path = format!(
+        "{}/sample_graduate_program_data.csv",
+        env!("CARGO_MANIFEST_DIR")
+    );
+    let records = load_records(file_path.as_str())?;
 
     // Generate and print summary statistics
     let (

@@ -14,7 +14,7 @@ build:
 
 # Run the project
 run:
-	./target/release/$(BIN_NAME)
+	./target/release/data_processing
 
 # Lint the code (using clippy)
 lint:
