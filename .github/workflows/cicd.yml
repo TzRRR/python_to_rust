@@ -14,15 +14,23 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-      - name: Install Dependencies and Build
-        run: make install
-      - name: Format Check
-        run: make format
-      - name: Lint Code
-        run: make lint
-      - name: Run Tests
-        run: make test
       - name: Build Project
-        run: make build
+        run: |
+          cd data_processing
+          make build
+      - name: Format Check
+        run: |
+          cd data_processing
+          make format
+      - name: Lint Code
+        run: |
+          cd data_processing
+          make lint
+      - name: Run Tests
+        run: |
+          cd data_processing
+          make test
       - name: Run Project
-        run: make run
+        run: |
+          cd data_processing
+          make run
