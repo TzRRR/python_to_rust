@@ -45,4 +45,4 @@ jobs:
       # Step 6: Run Python tests (pytest)
       - name: Run Python tests
         run: |
-          pytest python_script/tests
+          pytest python_script
