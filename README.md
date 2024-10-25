@@ -1,6 +1,7 @@
 # python_to_rust
 
-[![CI](https://github.com/TzRRR/python_to_rust/actions/workflows/cicd.yml/badge.svg)](https://github.com/TzRRR/python_to_rust/actions/workflows/cicd.yml)
+[![CI](https://github.com/TzRRR/python_to_rust/actions/workflows/python_cicd.yml/badge.svg)](https://github.com/TzRRR/python_to_rust/actions/workflows/python_cicd.yml)
+[![CI](https://github.com/TzRRR/python_to_rust/actions/workflows/rust_cicd.yml/badge.svg)](https://github.com/TzRRR/python_to_rust/actions/workflows/rust_cicd.yml)
 
 This project demonstrates the conversion of a Python data processing script to Rust, with a focus on improving performance. It includes a comparison of execution time, system usage, and CPU utilization between the Python and Rust implementations.
 

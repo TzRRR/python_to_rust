@@ -1,0 +1,47 @@
+name: Python CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  python-ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Step 2: Set up Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r python_script/requirements.txt
+
+      # Step 4: Run formatter (black)
+      - name: Format Python Code
+        run: |
+          pip install black
+          black --check python_script/
+
+      # Step 5: Run linter (flake8)
+      - name: Lint Python Code
+        run: |
+          pip install flake8
+          flake8 python_script/descriptive_stats.py python_script/test_descriptive_stats.py --exclude venv/
+
+      # Step 6: Run Python tests (pytest)
+      - name: Run Python tests
+        run: |
+          pytest python_script/tests
