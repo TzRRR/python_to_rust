@@ -8,27 +8,41 @@ This project demonstrates the conversion of a Python data processing script to R
 ## Project Structure
 
 ```bash
-.
+python_to_rust/
+│
 ├── .github/
 │   └── workflows/
-│       └── cicd.yml               # GitHub Actions CI/CD pipeline
+│       ├── python_cicd.yml
+│       └── rust_cicd.yml
+│
+├── .pytest_cache/                   # Cache files for pytest
 ├── data_processing/
-│   ├── src/                       # Rust source files
-│   │   ├── main.rs                # Main entry point for the Rust project
-│   │   └── lib.rs                 # Functions and logic for the project
-│   ├── target/                    # Build output directory
-│   ├── Cargo.toml                 # Rust dependencies and project metadata
-│   ├── Makefile                   # Build and test automation
-│   ├── sample_graduate_program_data.csv  # Sample dataset
-│   └── generated plots (PNG files)
-├── venv/                          # Python virtual environment
-├── descriptive_stats.py            # Original Python script
-├── graduate_program_recommendation_data.csv  # Original dataset
-├── performance_comparison.md       # Performance report comparing Python and Rust implementations
-├── requirements.txt                # Python dependencies
-└── README.md                       # This README file
-
+│   ├── src/                         # Source files for the Rust project
+│   │   ├── lib.rs                   # Library file for Rust project (includes tests)
+│   │   └── main.rs                  # Main file for Rust project
+│   ├── Cargo.lock                   # Dependency lock file for Rust
+│   ├── Cargo.toml                   # Rust project configuration file
+│   ├── cgpa_histogram.png            # Output image: Histogram of CGPA
+│   ├── graduate_program_recommendation_data.csv # Dataset for Rust project
+│   ├── gre_scatter_plot.png          # Output image: Scatter plot of GRE scores
+│   ├── sample_graduate_program_data.csv # Sample dataset
+│   ├── toefl_bar_plot.png            # Output image: Bar plot of TOEFL scores
+│   └── Makefile                      # Makefile for building, running, and testing Rust project
+│
+├── python_script/
+│   ├── __pycache__/                  # Python cache files
+│   ├── .pytest_cache/                # Cache files for pytest
+│   ├── venv/                         # Python virtual environment folder
+│   ├── descriptive_stats.py          # Main Python script
+│   ├── graduate_program_recommendation_data.csv # Dataset for Python project
+│   ├── requirements.txt              # Python dependencies file
+│   └── test_descriptive_stats.py     # Unit tests for the Python script
+│
+├── .gitignore                        # Git ignore file
+├── performance_comparison.md         # Performance comparison between Python and Rust
+└── README.md                         # Project README file
 ```
+
 
 ## Installing Dependencies
 
