@@ -16,7 +16,9 @@ def main():
 
     # Generate summary statistics including min and max
     summary_stats = df.describe().T[["mean", "50%", "std", "min", "max"]]
-    summary_stats.columns = ["Mean", "Median", "Standard Deviation", "Min", "Max"]
+    summary_stats.columns = [
+        "Mean", "Median", "Standard Deviation", "Min", "Max"
+    ]
     print(summary_stats)
 
     # Visualizations
@@ -60,7 +62,9 @@ def plot_bar(df):
     Plot a bar chart of TOEFL Scores distribution.
     """
     plt.figure(figsize=(10, 6))
-    df["toeflScore"].value_counts().sort_index().plot(kind="bar", color="skyblue")
+    df["toeflScore"].value_counts().sort_index().plot(
+        kind="bar", color="skyblue"
+    )
     plt.title("Distribution of TOEFL Scores")
     plt.xlabel("TOEFL Score")
     plt.ylabel("Frequency")
